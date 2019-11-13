@@ -43,12 +43,12 @@
 
 ## API 문서 작성하기
 
-| 구분                 | url              | method | parameter                        | response                                                                         |
+| 구분                 | url              | method | parameter                        | response(default error포함)                                                      |
 | -------------------- | ---------------- | ------ | -------------------------------- | -------------------------------------------------------------------------------- |
 | 로그인               | /auth/login      | POST   | email,password                   | result(B),token,admin(B)                                                         |
 | email 중복체크       | /auth/email      | GET    | email                            | result(B)                                                                        |
 | 회원가입             | /auth/join       | POST   | name,email,password              | result(B)                                                                        |
-| 메인페이지의 글      | /api/posts       | GET    | tag,page,per_page                | id, title, date, author, tags, comment_count                                     |
+| 메인페이지의 글      | /api/post        | GET    | tag,page                         | id, title, date, author, tags, comment_count                                     |
 | 메인페이지 왼쪽 태그 | /api/tags        | GET    |                                  | tags[{tag,post_count}]                                                           |
 | 글 상세              | /api/post/:id    | GET    | id                               | id, title, date, author, tags[tag], contents, comments[{author, date, contents}] |
 | 글 쓰기              | /api/post        | POST   | title, tags, contents, token     | result(B)                                                                        |
