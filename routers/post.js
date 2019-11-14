@@ -16,7 +16,7 @@ router.post(
     }
     const { title, contents, tags } = req.body;
     if (validatePost(req.body).error) {
-      res.status(400).json({ result: false, error: "양식에 맞지 않음" });
+      res.status(400).json({ result: fals, error: "양식에 맞지 않음" });
       next();
       return;
     }
@@ -39,7 +39,6 @@ router.post(
     next();
   })
 );
-
 router.get(
   "/",
   wrapper(async (req, res, next) => {
@@ -105,4 +104,5 @@ router.delete(
     next();
   })
 );
+
 module.exports = router;
